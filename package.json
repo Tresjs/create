@@ -1,5 +1,5 @@
 {
-  "name": "create-tres",
+  "name": "create-tresjs",
   "version": "0.1.0",
   "type": "module",
   "description": "CLI wizard to create TresJS projects",
