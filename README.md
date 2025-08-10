@@ -6,13 +6,13 @@
 
 ```bash
 # With npm
-npx create-tresjs my-tres-project
+npx create-tres my-tres-project
 
 # With yarn
-yarn create tresjs my-tres-project
+yarn create tres my-tres-project
 
 # With pnpm
-pnpm create tresjs my-tres-project
+pnpm create tres my-tres-project
 ```
 
 ## Features
