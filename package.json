@@ -1,6 +1,6 @@
 {
   "name": "create-tres",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "type": "module",
   "packageManager": "pnpm@10.17.0",
   "description": "CLI wizard to create TresJS projects",
