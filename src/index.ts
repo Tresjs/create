@@ -7,7 +7,6 @@ import fs from 'fs-extra'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import validateProjectName from 'validate-npm-package-name'
-import { execSync } from 'child_process'
 import { bold, gray, lightGreen, yellow } from 'kolorist'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
