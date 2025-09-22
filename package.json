@@ -43,6 +43,7 @@
     "release": "release-it"
   },
   "dependencies": {
+    "@tresjs/core": "5.0.1",
     "chalk": "^5.6.2",
     "commander": "^14.0.1",
     "fs-extra": "^11.3.2",
