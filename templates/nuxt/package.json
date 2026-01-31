@@ -14,15 +14,15 @@
   },
   "dependencies": {
     "@nuxt/eslint": "^1.9.0",
-    "@tresjs/nuxt": "5.0.0",
+    "@tresjs/nuxt": "latest",
     "eslint": "^9.36.0",
-    "nuxt": "^4.1.2",
-    "three": "^0.180.0",
+    "nuxt": "latest",
+    "three": "latest",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@types/three": "^0.180.0",
-    "typescript": "^5.9.2"
+    "@types/three": "latest",
+    "typescript": "latest"
   }
 }

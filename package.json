@@ -2,7 +2,7 @@
   "name": "create-tres",
   "version": "1.0.1",
   "type": "module",
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.28.2",
   "description": "CLI wizard to create TresJS projects",
   "keywords": [
     "tresjs",
@@ -35,7 +35,7 @@
   "scripts": {
     "build": "tsdown",
     "build:watch": "tsdown --watch",
-    "dev": "pnpm run build && node dist/index.js",
+    "dev": "pnpm run build && node bin/index.js",
     "test": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -43,25 +43,25 @@
     "release": "release-it"
   },
   "dependencies": {
-    "@tresjs/core": "5.0.1",
+    "@tresjs/core": "5.3.3",
     "chalk": "^5.6.2",
-    "commander": "^14.0.1",
-    "fs-extra": "^11.3.2",
+    "commander": "^14.0.3",
+    "fs-extra": "^11.3.3",
     "kolorist": "^1.8.0",
     "prompts": "^2.4.2",
     "validate-npm-package-name": "^6.0.2"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^10.0.1",
-    "@tresjs/eslint-config": "^1.4.0",
+    "@release-it/conventional-changelog": "^10.0.4",
+    "@tresjs/eslint-config": "^1.5.1",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^24.5.2",
+    "@types/node": "^25.1.0",
     "@types/prompts": "^2.4.9",
     "@types/validate-npm-package-name": "^4.0.2",
-    "release-it": "^19.0.5",
-    "tsdown": "^0.15.4",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
+    "release-it": "^19.2.4",
+    "tsdown": "^0.20.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   },
   "engines": {
     "node": ">=16.0.0"
