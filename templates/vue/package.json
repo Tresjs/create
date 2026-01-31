@@ -12,19 +12,19 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@tresjs/core": "^5.0.0",
-    "three": "^0.180.0",
-    "three-stdlib": "^2.36.0",
-    "vue": "^3.5.21"
+    "@tresjs/core": "latest",
+    "three": "latest",
+    "three-stdlib": "latest",
+    "vue": "latest"
   },
   "devDependencies": {
     "@tresjs/eslint-config": "^1.4.0",
-    "@types/three": "^0.180.0",
-    "@vitejs/plugin-vue": "^6.0.1",
+    "@types/three": "latest",
+    "@vitejs/plugin-vue": "latest",
     "eslint": "^9.36.0",
-    "typescript": "^5.9.2",
-    "vite": "^7.1.6",
-    "vite-plugin-glsl": "^1.5.1",
-    "vue-tsc": "^3.0.7"
+    "typescript": "latest",
+    "vite": "latest",
+    "vite-plugin-glsl": "latest",
+    "vue-tsc": "latest"
   }
 }

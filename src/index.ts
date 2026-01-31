@@ -17,7 +17,7 @@ interface ProjectOptions {
   // typescript: boolean // Removed: TypeScript is always enabled
   eslint: boolean
   packages: string[]
-  packageManager: 'npm' | 'yarn' | 'pnpm'
+  packageManager: 'npm' | 'yarn' | 'pnpm' | 'bun' | 'deno'
 }
 
 const ECOSYSTEM_PACKAGES = [
@@ -49,11 +49,13 @@ function validatePackageName(name: string): boolean {
   return validation.validForNewPackages
 }
 
-function getPackageManager(): 'npm' | 'yarn' | 'pnpm' {
+function getPackageManager(): 'npm' | 'yarn' | 'pnpm' | 'bun' | 'deno' {
   const userAgent = process.env.npm_config_user_agent || ''
-  
+
   if (userAgent.includes('yarn')) return 'yarn'
   if (userAgent.includes('pnpm')) return 'pnpm'
+  if (userAgent.includes('bun')) return 'bun'
+  if (userAgent.includes('deno')) return 'deno'
   return 'npm'
 }
 
@@ -61,6 +63,8 @@ function getInstallCommand(packageManager: string): string {
   switch (packageManager) {
     case 'yarn': return 'yarn'
     case 'pnpm': return 'pnpm install'
+    case 'bun': return 'bun install'
+    case 'deno': return 'deno install'
     default: return 'npm install'
   }
 }
@@ -69,6 +73,8 @@ function getRunCommand(packageManager: string): string {
   switch (packageManager) {
     case 'yarn': return 'yarn dev'
     case 'pnpm': return 'pnpm dev'
+    case 'bun': return 'bun dev'
+    case 'deno': return 'deno task dev'
     default: return 'npm run dev'
   }
 }
@@ -222,8 +228,8 @@ async function main(): Promise<void> {
             name: 'template',
             message: 'Select a template:',
             choices: [
-              { title: 'Vue + Vite', value: 'vue', description: 'Vue 3 with Vite build tool' },
-              { title: 'Nuxt', value: 'nuxt', description: 'Nuxt 3 with TresJS module' }
+              { title: 'Vue', value: 'vue', description: 'Latest Vue with Vite build tool' },
+              { title: 'Nuxt', value: 'nuxt', description: 'Latest Nuxt with TresJS module' }
             ],
             initial: 0
           },
