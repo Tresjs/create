@@ -45,6 +45,7 @@ The CLI includes options for the following TresJS ecosystem packages:
 - **@tresjs/cientos** - Collection of useful helpers and ready-made abstractions
 - **@tresjs/post-processing** - Post-processing effects for TresJS
 - **@tresjs/leches** - Tasty GUI controls for development
+- **@tresjs/rapier** - Physics for TresJS, powered by Rapier
 - **@tresjs/path-tracing** - Path-tracing rendering capabilities
 
 ## Development

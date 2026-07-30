@@ -37,12 +37,23 @@ const ECOSYSTEM_PACKAGES = [
     description: 'Tasty GUI controls for development',
     value: 'leches'
   },
+  {
+    name: '@tresjs/rapier',
+    description: 'Physics for TresJS, powered by Rapier',
+    value: 'rapier'
+  },
   /* {
     name: '@tresjs/path-tracing',
     description: 'Path-tracing rendering capabilities',
     value: 'path-tracing'
   } */
 ]
+
+// Path of the demo component each template renders, relative to the project root
+const EXPERIENCE_COMPONENT_PATH: Record<ProjectOptions['template'], string> = {
+  vue: path.join('src', 'components', 'TheExperience.vue'),
+  nuxt: path.join('components', 'TheExperience.vue')
+}
 
 function validatePackageName(name: string): boolean {
   const validation = validateProjectName(name)
@@ -93,6 +104,19 @@ async function replaceTemplateVariables(targetDir: string, projectName: string):
   }
 }
 
+// Swaps the default demo component for one showcasing the selected package
+async function applyPackageVariant(
+  targetDir: string,
+  template: ProjectOptions['template'],
+  variant: string
+): Promise<void> {
+  const variantFile = path.join(__dirname, '..', 'templates', 'variants', variant, template, 'TheExperience.vue')
+
+  if (!await fs.pathExists(variantFile)) return
+
+  await fs.copy(variantFile, path.join(targetDir, EXPERIENCE_COMPONENT_PATH[template]))
+}
+
 async function createProject(options: ProjectOptions): Promise<void> {
   const { name, template, eslint, packages, packageManager } = options
   
@@ -104,7 +128,11 @@ async function createProject(options: ProjectOptions): Promise<void> {
   // Copy template files
   const templateDir = path.join(__dirname, '..', 'templates', template)
   await fs.copy(templateDir, targetDir)
-  
+
+  if (packages.includes('rapier')) {
+    await applyPackageVariant(targetDir, template, 'rapier')
+  }
+
   // Replace template variables in files
   await replaceTemplateVariables(targetDir, name)
   
