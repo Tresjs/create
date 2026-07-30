@@ -45,6 +45,17 @@ A complete Nuxt 3 application with TresJS integration:
 - `nuxt.config.ts` - Nuxt configuration with TresJS module
 - `package.json` - Dependencies and scripts
 
+## Variants (`variants/`)
+
+Optional overrides applied on top of a template when the matching ecosystem package is selected. This directory is never copied as a whole; the CLI picks individual files out of it.
+
+Layout: `variants/<package>/<template>/<file>`
+
+- `variants/rapier/vue/TheExperience.vue` - replaces `src/components/TheExperience.vue`
+- `variants/rapier/nuxt/TheExperience.vue` - replaces `components/TheExperience.vue`
+
+Both showcase a `<Physics>` world (wrapped in `<Suspense>`, required by Rapier's async wasm) with a bouncing `RigidBody` sphere on a fixed floor.
+
 ## Template Variables
 
 Both templates use the following variables that should be replaced during scaffolding:
